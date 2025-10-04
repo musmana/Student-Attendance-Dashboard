@@ -1,11 +1,21 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/Student-Attendance-Dashboard/', // Add this line with your repository name
+  base: '/Student-Attendance-Dashboard/',
   server: {
     port: 3000
+  },
+  // Add this build configuration
+  build: {
+    rollupOptions: {
+      output: {
+        // Ensure JSX files are treated as JS
+        entryFileNames: `assets/[name].js`,
+        chunkFileNames: `assets/[name].js`,
+        assetFileNames: `assets/[name].[ext]`
+      }
+    }
   }
 })

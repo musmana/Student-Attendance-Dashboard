@@ -1,5 +1,5 @@
 import React from 'react';
-import AttendanceList from './components/AttendanceList';
+import AttendanceList from './components/AttendanceList.jsx';  // Explicit .jsx extension
 
 const studentsData = [
   { id: 1, name: 'Alice Johnson', rollNo: '101', attendance: 92 },
@@ -17,7 +17,9 @@ function App() {
     <div style={{ 
       minHeight: '100vh', 
       backgroundColor: '#ecf0f1',
-      fontFamily: 'Arial, sans-serif'
+      fontFamily: 'Arial, sans-serif',
+      margin: 0,
+      padding: 0
     }}>
       <AttendanceList students={studentsData} />
     </div>
